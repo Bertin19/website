@@ -226,6 +226,7 @@ def detail(request, album_id):
         return render(request, 'music/detail.html', {'album': album, 'user': user})
 
 
+
 def songs(request, filter_by):
     if not request.user.is_authenticated():
         return render(request, 'music/login.html')
@@ -268,7 +269,7 @@ def songs(request, filter_by):
          #   return render(request, 'music/index.html', {'albums': albums})
 
 def index(request):
-    if not request.user.is_authenticated():
+    if not request.user.is_authenticated:
         return render(request, 'music/login.html')
     else:
         albums = Album.objects.filter(user=request.user)
@@ -288,9 +289,6 @@ def index(request):
             })
         else:
             return render(request, 'music/index.html', {'albums': albums})
-
-def index(request):
-    return render(request, 'music/login.html')
 
 
 
