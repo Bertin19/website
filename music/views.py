@@ -235,7 +235,12 @@ def songs(request, filter_by):
 
 def index(request):
     if not request.user.is_authenticated:
-        return render(request, 'music/login.html')
+        song_results = Song.objects.all()
+        albums = Album.objects.all()
+        return render(request, 'music/index.html', {
+            'albums': albums,
+            'songs': song_results,
+        })
     else:
         albums = Album.objects.filter(user=request.user)
         song_results = Song.objects.all()
