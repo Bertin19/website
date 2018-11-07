@@ -2,6 +2,35 @@ body {
     background: white url("images/download.jpg");
 }
 
+#calendar-container{
+    padding: 10px;
+    width: 210px;
+    height: 240px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+#calendar-container>div{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#calendar-month-year{
+    margin: 5px;
+}
+
+#calendar-dates>table>tr>td{
+    padding: 5px;
+}
+
+.today {
+    background: blue;
+    color: #fff;
+  }
+
 ul.errorlist {
     padding-left: 0;
 }
@@ -27,347 +56,73 @@ ul.errorlist > li {
     color: #FDB230;
 }
 
-
-header {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 18px;
-  height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-
-  -webkit-perspective: 100px;
-
-          perspective: 100px;
-}
-
-header:before {
-  -webkit-animation: fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
-          animation: fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.8)),
-              url(../images/background.jpg) no-repeat bottom;
-  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.8)),
-              url(../images/background.jpg) no-repeat bottom;
-  background-size: cover;
-    bottom: 0;
-  content: "";
-    left: 0;
-  opacity: 0;
-  position: absolute;
-    right: 0;
-    top: 0;
-  z-index: -1;
-}
-
-header:after {
-  background: #F9FCFF;
-  content: "";
-  height: 40rem;
-  left: -5%;
-  position: absolute;
-    right: -5%;
-    top: 90%;
-  -webkit-transform: rotateZ(-4deg);
-          transform: rotateZ(-4deg);
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  z-index: 0;
-}
-
-.header-title, .header-subtitle {
-  color: #fff;
-}
-
-.header-subtitle {
-  margin-bottom: 5rem;
-  text-transform: uppercase;
-}
-
-.header-button {
-  position: relative;
-  -webkit-transform: translateZ(.1px);
-          transform: translateZ(.1px);
-  z-index: 10;
-}
-
-.animate-pop-in {
-  -webkit-animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
-          animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
-  opacity: 0;
-}
-
-.rocky-dashed {
-  -webkit-animation-delay: .6s;
-          animation-delay: .6s;
-}
-
-.header-title {
-  -webkit-animation-delay: .8s;
-          animation-delay: .8s;
-}
-
-.header-subtitle {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.header-button {
-  -webkit-animation-delay: 1.1s;
-          animation-delay: 1.1s;
-}
-
-.header-down-arrow {
-  -webkit-animation: pulse 2s 3s ease-out infinite;
-          animation: pulse 2s 3s ease-out infinite;
-    bottom: 4vh;
-    left: 0;
-  position: absolute;
-    right: 0;
-  text-align: center;
-  z-index: 10;
-}
-
-.header-down-arrow img {
-  -webkit-animation: fade-slide-up 1s 1s ease-out forwards;
-          animation: fade-slide-up 1s 1s ease-out forwards;
-  opacity: 0;
-}
-
-/* Animations */
-
-@-webkit-keyframes fade-slide-down {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-4rem);
-            transform: translateY(-4rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@keyframes fade-slide-down {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-4rem);
-            transform: translateY(-4rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@-webkit-keyframes fade-slide-up {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(4rem);
-            transform: translateY(4rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@keyframes fade-slide-up {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(4rem);
-            transform: translateY(4rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@-webkit-keyframes pop-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-4rem) scale(.8);
-            transform: translateY(-4rem) scale(.8);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@keyframes pop-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-4rem) scale(.8);
-            transform: translateY(-4rem) scale(.8);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-  50% {
-    opacity: .8;
-    -webkit-transform: scale(.8);
-            transform: scale(.8);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-  50% {
-    opacity: .8;
-    -webkit-transform: scale(.8);
-            transform: scale(.8);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-
-
-
-.cld-main{
-  width: 400px;
-}
-.cld-main a{
-  color: #0080FF;
-}
-.cld-main svg{
-  fill: #0080FF;
-}
-  .cld-datetime{
-    position: relative;
-    width: 66%;
-    min-width: 100px;
-    max-width: 300px;
-    margin: auto;
-    overflow: hidden;
-  }
-  .cld-datetime .today{
-    position: relative;
-    float: left;
-    width: calc(100% - 40px);
-    margin: auto;
+/* Month header */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
     text-align: center;
-  }
-  .cld-nav{
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin-top: 2px;
-  }
-  .cld-nav:hover{
-    cursor: pointer;
-  }
-  .cld-nav:hover svg{
-      fill: #005EFF;
-  }
-  .cld-rwd{
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
     float: left;
-  }
-  .cld-fwd{
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
     float: right;
-  }
-    .cld-nav svg:hover{
-
-    }
-.cld-labels, .cld-days{
-  padding-left: 0;
+    padding-top: 10px;
 }
-  .cld-label, .cld-day{
-    box-sizing: border-box;
-    display: inline-block;
-    width: 14.28%;
-    text-align: center;
-  }
-  .cld-day{
-    border: 1px solid #eee;
-  }
-  .cld-day.today .cld-number{
-    background: #0080FF;
-    color: #fff;
-  }
-  .cld-day.disableDay{
-    opacity: 0.5;
-  }
-  .cld-day.nextMonth, .cld-day.prevMonth{
-    opacity: 0.33;
-  }
-    .cld-number{
-      position: relative;
-      margin: 0;
-      padding: 10px;
-    }
-      .cld-title{
-        position: absolute;
-        z-index: 5;
-        display: none;
-        top: 35px;
-        left: 0;
-        padding: 5px 10px;
-        background: #fff;
-        white-space: nowrap;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 12px;
-      }
-      .cld-number:hover .cld-title{
-        display: block;
-      }
-      .cld-title::before{
-        content: '';
-        position: absolute;
-        top: -7.5px; left: 10px;
-        width: 0;
-        height: 0;
-        border-left: 7.5px solid transparent;
-        border-right: 7.5px solid transparent;
 
-        border-bottom: 7.5px solid #ccc;
-      }
-      .cld-number.eventday{
-        font-weight: bold;
-        color: #0080FF;
-      }
-      .cld-number.eventday:hover{
-        cursor: pointer;
-        background: #eee;
-      }
-      .today .cld-number.eventday:hover{
-        background: #005EFF;
-      }
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
