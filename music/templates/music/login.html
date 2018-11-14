@@ -6,144 +6,147 @@
 <div class="container-fluid">
 
 
-    <div class="col-sm-10 col-sm-6">
-        <div class="panel panel-default">
+    <div class="col-sm-2">
+        <div class="panel">
             <div id="calendar-container">
-                    <div id="calendar-header">
-                        <span id="calendar-month-year"></span>
-                    </div>
+                <div id="calendar-header">
+                    <span id="calendar-month-year"></span>
+                </div>
                 <div id="calendar-dates">
                 </div>
             </div>
         </div>
     </div>
 
-        	<script>
-
-window.onload = function(){
-    var d = new Date();
-    var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    var month = d.getMonth();   //0-11
-    var year = d.getFullYear(); //2014
-    var first_date = month_name[month] + " " + 1 + " " + year;
-    //September 1 2014
-    var tmp = new Date(first_date).toDateString();
-    //Mon Sep 01 2014 ...
-    var first_day = tmp.substring(0, 3);    //Mon
-    var day_name = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    var day_no = day_name.indexOf(first_day);   //1
-    var days = new Date(year, month+1, 0).getDate();    //30
-    //Tue Sep 30 2014 ...
-    var calendar = get_calendar(day_no, days);
-    document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
-    document.getElementById("calendar-dates").appendChild(calendar);
-}
-
-function get_calendar(day_no, days){
-    var table = document.createElement('table');
-    var tr = document.createElement('tr');
-
-    //row for the day letters
-    for(var c=0; c<=6; c++){
-        var td = document.createElement('td');
-        td.innerHTML = "SMTWTFS"[c];
-        tr.appendChild(td);
-    }
-    table.appendChild(tr);
-
-    //create 2nd row
-    tr = document.createElement('tr');
-    var c;
-    for(c=0; c<=6; c++){
-        if(c == day_no){
-            break;
+    <script type="text/javascript">
+        window.onload = function () {
+            var d = new Date();
+            var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var month = d.getMonth();   //0-11
+            var year = d.getFullYear(); //2014
+            var first_date = month_name[month] + " " + 1 + " " + year;
+            //September 1 2014
+            var tmp = new Date(first_date).toDateString();
+            //Mon Sep 01 2014 ...
+            var first_day = tmp.substring(0, 3);    //Mon
+            var day_name = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            var day_no = day_name.indexOf(first_day);   //1
+            var days = new Date(year, month + 1, 0).getDate();    //30
+            //Tue Sep 30 2014 ...
+            var calendar = get_calendar(day_no, days);
+            document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
+            document.getElementById("calendar-dates").appendChild(calendar);
         }
-        var td = document.createElement('td');
-        td.innerHTML = "";
-        tr.appendChild(td);
-    }
 
-    var count = 1;
-    for(; c<=6; c++){
-        var td = document.createElement('td');
-        td.innerHTML = count;
-        count++;
-        tr.appendChild(td);
-    }
-    table.appendChild(tr);
+        function get_calendar(day_no, days) {
+            var todaysDate = new Date().getDate();
+            var table = document.createElement('table');
+            var tr = document.createElement('tr');
 
-    //rest of the date rows
-    for(var r=3; r<=7; r++){
-        tr = document.createElement('tr');
-        for(var c=0; c<=6; c++){
-            if(count > days){
-                table.appendChild(tr);
-                return table;
+            //row for the day letters
+            for (var c = 0; c <= 6; c++) {
+                var th = document.createElement('th');
+                th.innerHTML = "MTWTFSS"[c];
+                tr.appendChild(th);
             }
-            var td = document.createElement('td');
-            td.innerHTML = count;
-            count++;
-            tr.appendChild(td);
+            table.appendChild(tr);
+            //create 2nd row
+            tr = document.createElement('tr');
+            var c;
+            for (c = 0; c <= 6; c++) {
+                if (c == day_no) {
+                    break;
+                }
+                var td = document.createElement('td');
+                td.innerHTML = "";
+                tr.appendChild(td);
+            }
+            var count = 1;
+            for (; c <= 6; c++) {
+                var td = document.createElement('td');
+                if (count == todaysDate) {
+                    td.className = 'today';
+                }
+                td.innerHTML = count;
+                count++;
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+            //rest of the date rows
+            for (var r = 3; r <= 7; r++) {
+                tr = document.createElement('tr');
+                for (var c = 0; c <= 6; c++) {
+                    if (count > days) {
+                        table.appendChild(tr);
+                        return table;
+                    }
+                    var td = document.createElement('td');
+                    if (count == todaysDate) {
+                        td.className = 'today';
+                    }
+                    td.innerHTML = count;
+                    count++;
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            return table;
         }
-        table.appendChild(tr);
-    }
-    return table;
-}
+    </script>
+    <div class="container-fluid">
 
-</script>
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>Sign in</h3>
-                    {% if error_message %}
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Sign in</h3>
+                        {% if error_message %}
                         <p><strong>{{ error_message }}</strong></p>
-                    {% endif %}
-                    <form class="form-horizontal" role="form" action="{% url 'music:login_user'%}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="id_username">
-                                Username:
-                            </label>
-                            <div class="col-sm-10">
-                                <input id="id_username" maxlength="30" name="username" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="id_password">
-                                Password:
-                            </label>
-                            <div class="col-sm-10">
-                                <input id="id_password" maxlength="30" name="password" type="password">
-                            </div>
-                        </div>
-
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">
-                                    Remember me
+                        {% endif %}
+                        <form class="form-horizontal" role="form" action="{% url 'music:login_user'%}" method="post"
+                              enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="id_username">
+                                    Username:
                                 </label>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Sign in</button>
+                                <div class="col-sm-10">
+                                    <input id="id_username" maxlength="30" name="username" type="text">
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="panel-footer">
-                    Don't have an account? <a href="{% url 'music:register' %}">Click here</a> to register.
-                </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="id_password">
+                                    Password:
+                                </label>
+                                <div class="col-sm-10">
+                                    <input id="id_password" maxlength="30" name="password" type="password">
+                                </div>
+                            </div>
 
+                            <div class="form-group form-check">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    Remember me
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-success">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        Don't have an account? <a href="{% url 'music:register' %}">Click here</a> to register.
+                    </div>
+
+                </div>
             </div>
+
         </div>
 
     </div>
-
-</div>
 
 </div>
 {% endblock %}

@@ -2,12 +2,16 @@ body {
     background: white url("images/download.jpg");
 }
 
+.today {
+    background: blue;
+    color: #fff;
+  }
+
 #calendar-container{
     padding: 10px;
     width: 210px;
     height: 240px;
     text-align: center;
-    border: 1px solid #eee;
     border-radius: 10px;
     font-size: 16px;
     font-family: Arial;
