@@ -23,3 +23,11 @@ class Song(models.Model):
     def __str__(self):
         return self.song_title
 
+
+from allauth.account.signals import user_logged_in
+from django.dispatch import receiver
+
+@receiver(user_logged_in)
+def retrieve_social_data(request, user, **kwargs):
+    """Signal, that gets extra data from sociallogin and put it to profile."""
+    print(user)
