@@ -5,6 +5,9 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .forms import AlbumForm, SongForm, UserForm
 from .models import Album, Song
+
+from rest_framework.authtoken.models import Token
+from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 
 
@@ -16,8 +19,8 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 from django.forms import Form, CharField
 
 class SignupForm(Form):
-    first_name = CharField(max_length=30, label='Voornaam')
-    last_name = CharField(max_length=30, label='Achternaam')
+    first_name = CharField(max_length=30, label='firstname')
+    last_name = CharField(max_length=30, label='lastname')
 
     def signup(self, request, user):
         user.first_name = self.cleaned_data['first_name']
@@ -171,6 +174,7 @@ def login_user(request):
 
 
 def register(request):
+    permisson_classes = (permissions.AllowAny,)
     form = UserForm(request.POST or None)
     if form.is_valid():
         user = form.save(commit=False)
@@ -268,8 +272,6 @@ def index(request):
             })
         else:
             return render(request, 'music/index.html', {'albums': albums})
-
-
 
 
 

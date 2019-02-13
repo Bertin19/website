@@ -9,7 +9,7 @@ SECRET_KEY = 'rha7*we-io_dbhnf$k)%wum_i=-fct9+n^j+@5j9p*$z01lzj1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bertin.pythonanywhere.com']
+ALLOWED_HOSTS = ['bertin.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 
@@ -45,6 +45,8 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SITE_ID = 1
 
+
+
 ACCOUNT_SIGNUP_FORM_CLASS = 'music.views.SignupForm'
 
 MIDDLEWARE = [
@@ -61,14 +63,15 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_QUERY_EMAIL = True
-LOGIN_REDIRECT_URL = "/"
+#LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = 'music'
 
 ROOT_URLCONF = 'website.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
