@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .forms import AlbumForm, SongForm, UserForm
 from .models import Album, Song
-
+from django.contrib.auth.models import Permission
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
