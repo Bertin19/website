@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36bb8429-bf04-4221-8e47-611331864d11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/Songs.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/Songs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/music/templates/music/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/base_visitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/base_visitor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/create_album.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/create_album.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/create_song.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/create_song.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/form_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/form_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/templates/music/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/music/templates/music/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,5 +58,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
