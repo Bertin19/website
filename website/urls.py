@@ -8,6 +8,9 @@ urlpatterns = [
     url(r'^music/', include('music.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^', include('music.urls')),
+    url('', include('social_django.urls', namespace='social')),
+
+    #url(r'^oauth/', include('social_django.urls', namespace='social')),  # <--
 ]
 
 if settings.DEBUG:
