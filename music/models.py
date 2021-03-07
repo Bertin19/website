@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from django.contrib.auth.models import Permission, User
 from django.db import models
 
@@ -32,6 +33,8 @@ from django.dispatch import receiver
 def retrieve_social_data(request, user, **kwargs):
     """Signal, that gets extra data from sociallogin and put it to profile."""
 =======
+=======
+>>>>>>> parent of edf2cf7... wip
 from django.contrib.auth.models import Permission, User
 from django.db import models
 
@@ -57,6 +60,7 @@ class Song(models.Model):
     def __str__(self):
         return self.song_title
 
+<<<<<<< HEAD
 
 from allauth.account.signals import user_logged_in
 from django.dispatch import receiver
@@ -66,3 +70,5 @@ def retrieve_social_data(request, user, **kwargs):
     """Signal, that gets extra data from sociallogin and put it to profile."""
 >>>>>>> 3c40d1c92f2fe860cd260a8d8e6510aef9f8ee90
     print(user)
+=======
+>>>>>>> parent of edf2cf7... wip

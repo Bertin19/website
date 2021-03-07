@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'rest_framework',
 <<<<<<< HEAD
 
@@ -56,6 +57,11 @@ SITE_ID = 1
 >>>>>>> 3c40d1c92f2fe860cd260a8d8e6510aef9f8ee90
 ACCOUNT_SIGNUP_FORM_CLASS = 'music.views.SignupForm'
 
+=======
+    'rest_framework'
+]
+
+>>>>>>> parent of edf2cf7... wip
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -66,6 +72,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 SOCIAL_AUTH_GITHUB_KEY = "d0d23d036a197e4149ca",
@@ -85,6 +92,8 @@ LOGIN_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = 'music'
 >>>>>>> 3c40d1c92f2fe860cd260a8d8e6510aef9f8ee90
 
+=======
+>>>>>>> parent of edf2cf7... wip
 ROOT_URLCONF = 'website.urls'
 
 TEMPLATES = [
@@ -112,13 +121,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-AUTHENTICATION_BACKENDS = (
-    # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

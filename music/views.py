@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import JsonResponse
@@ -275,6 +276,8 @@ def index(request):
 
 
 =======
+=======
+>>>>>>> parent of edf2cf7... wip
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import JsonResponse
@@ -282,9 +285,12 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .forms import AlbumForm, SongForm, UserForm
 from .models import Album, Song
+<<<<<<< HEAD
 from django.contrib.auth.models import Permission
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
+=======
+>>>>>>> parent of edf2cf7... wip
 from django.http import HttpResponse, HttpResponseRedirect
 
 
@@ -293,6 +299,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 AUDIO_FILE_TYPES = ['wav', 'mp3', 'ogg']
 IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 
+<<<<<<< HEAD
 from django.forms import Form, CharField
 
 class SignupForm(Form):
@@ -303,6 +310,9 @@ class SignupForm(Form):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.save()
+=======
+
+>>>>>>> parent of edf2cf7... wip
 
 
 
@@ -451,7 +461,10 @@ def login_user(request):
 
 
 def register(request):
+<<<<<<< HEAD
     permisson_classes = (permissions.AllowAny,)
+=======
+>>>>>>> parent of edf2cf7... wip
     form = UserForm(request.POST or None)
     if form.is_valid():
         user = form.save(commit=False)
@@ -552,4 +565,9 @@ def index(request):
 
 
 
+<<<<<<< HEAD
 >>>>>>> 3c40d1c92f2fe860cd260a8d8e6510aef9f8ee90
+=======
+
+
+>>>>>>> parent of edf2cf7... wip
