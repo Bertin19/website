@@ -9,7 +9,7 @@ SECRET_KEY = 'rha7*we-io_dbhnf$k)%wum_i=-fct9+n^j+@5j9p*$z01lzj1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['bertin.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['bertin.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 
@@ -74,6 +74,7 @@ MIDDLEWARE = [
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 SOCIAL_AUTH_GITHUB_KEY = "d0d23d036a197e4149ca",
 SOCIAL_AUTH_GITHUB_SECRET = "0bbae3d6c666ce085b68aeec7e69c926ea3cea18",
@@ -81,6 +82,8 @@ SOCIAL_AUTH_GITHUB_SCOP = "user:email",
 
 
 >>>>>>> 3c40d1c92f2fe860cd260a8d8e6510aef9f8ee90
+=======
+>>>>>>> parent of a5242d2... I've added the readme.txt
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -147,7 +150,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = 'website/music/static/music/style.css'
+STATIC_ROOT = 'home/Bertin/website/music/static/music/style.css'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

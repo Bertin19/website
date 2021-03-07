@@ -286,7 +286,11 @@ from django.db.models import Q
 from .forms import AlbumForm, SongForm, UserForm
 from .models import Album, Song
 <<<<<<< HEAD
+<<<<<<< HEAD
 from django.contrib.auth.models import Permission
+=======
+
+>>>>>>> parent of a5242d2... I've added the readme.txt
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 =======
