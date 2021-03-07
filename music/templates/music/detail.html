@@ -55,10 +55,9 @@
                             <tr>
                                 <td>{{ song.song_title }}</td>
                                 <td>
-                                    <div id="name"><a href="{{ song.audio_file.url }}" target="_blank">{{ song.name }}</a></div>
-                                        <div id="play"><audio src="{{ song.audio_file.url }}" controls="controls">
-                                            Your browser does not support the audio element.</audio>
-                                        </div>
+                                    <div id="play"><audio src="{{ song.audio_file.url }}" controls="controls">
+                                        Your browser does not support the audio element.</audio>
+                                    </div>
                                 </td>
                                 <td>
                                     <a href="{% url 'music:favorite' song.id %}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if song.is_favorite %}active{% endif %}"></span></a>
