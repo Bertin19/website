@@ -46,7 +46,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SITE_ID = 1
 
-
 ACCOUNT_SIGNUP_FORM_CLASS = 'music.views.SignupForm'
 
 MIDDLEWARE = [
@@ -65,10 +64,12 @@ SOCIAL_AUTH_GITHUB_SECRET = "0bbae3d6c666ce085b68aeec7e69c926ea3cea18",
 SOCIAL_AUTH_GITHUB_SCOP = "user:email",
 
 
+
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_QUERY_EMAIL = True
+
 
 #LOGIN_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL = 'music'
@@ -100,6 +101,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

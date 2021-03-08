@@ -1,0 +1,132 @@
+body {
+    background: white url("images/download.jpg");
+}
+
+.today {
+    background: blue;
+    color: #fff;
+  }
+
+#calendar-container{
+    padding: 10px;
+    width: 210px;
+    height: 240px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+#calendar-container>div{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#calendar-month-year{
+    margin: 5px;
+}
+
+#calendar-dates>table>tr>td{
+    padding: 5px;
+}
+
+.today {
+    background: blue;
+    color: #fff;
+  }
+
+ul.errorlist {
+    padding-left: 0;
+}
+
+ul.errorlist > li {
+    list-style: none;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+
+.glyphicon-star {
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.glyphicon-star.active {
+    color: #FDB230;
+}
+
+/* Month header */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+    text-align: center;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
