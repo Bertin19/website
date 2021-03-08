@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 .panel-heading {
     padding: 5px 15px;
 }
@@ -17,6 +18,8 @@
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 =======
+=======
+>>>>>>> Stashed changes
 .panel-heading {
     padding: 5px 15px;
 }
@@ -34,5 +37,26 @@
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
+<<<<<<< Updated upstream
+=======
+=======
+.panel-heading {
+    padding: 5px 15px;
+}
+
+.panel-footer {
+	padding: 1px 15px;
+	color: #A0A0A0;
+}
+
+.profile-img {
+	width: 96px;
+	height: 96px;
+	margin: 0 auto 10px;
+	display: block;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+>>>>>>> Stashed changes
 >>>>>>> 3c40d1c92f2fe860cd260a8d8e6510aef9f8ee90
 }
